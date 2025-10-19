@@ -6,7 +6,7 @@
 #    Daniel Jose Pereira                               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/19 04:10                        #+#    #+#              #
-#    Updated: 2025/10/19 19:58:28 by danjose-         ###   ########.fr        #
+#    Updated: 2025/10/19 21:19:24 by danjose-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -g -Wall -Wextra -Werror
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRCS = srcs/main.c srcs/parse.c
+SRCS = srcs/main.c srcs/parse.c srcs/ex_ops.c srcs/lst_ops.c srcs/ps_ops.c
 OBJS_DIR = objs
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 

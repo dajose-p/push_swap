@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ex_ops.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 03:43:34 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/19 21:28:38 by danjose-         ###   ########.fr       */
+/*   Created: 2025/10/19 21:12:40 by danjose-          #+#    #+#             */
+/*   Updated: 2025/10/19 21:17:13 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int main(int argc, char **argv)
+void	begin_ops(t_stack_a *stack_a)
 {
-	t_stack_a	*stack_a;
-	int	i;
+	t_stack_a	*head;
 
-	i = 0;
-	stack_a = init_lst();
-	if (argc < 2)
-		return (0);
-	if (is_num(argv) && !is_dup(argv) && limit_int(argv))
+	head = stack_a;
+	while (head)
 	{
-		while (i < argc)
-		{
-			stack_a = pa(ft_atoi(argv[i]));
-		}
-		begin_ops(stack_a);
+		ft_printf("%i\n", head->content);
+		head = head->next;
 	}
-	else
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}	
-	return (0);
 }

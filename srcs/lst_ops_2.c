@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   lst_ops_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 03:43:34 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/19 21:28:38 by danjose-         ###   ########.fr       */
+/*   Created: 2025/10/19 21:37:52 by danjose-          #+#    #+#             */
+/*   Updated: 2025/10/19 21:38:15 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int main(int argc, char **argv)
+t_stack_a       *init_a(int num)
 {
-	t_stack_a	*stack_a;
-	int	i;
+        t_list  *new;
 
-	i = 0;
-	stack_a = init_lst();
-	if (argc < 2)
-		return (0);
-	if (is_num(argv) && !is_dup(argv) && limit_int(argv))
-	{
-		while (i < argc)
-		{
-			stack_a = pa(ft_atoi(argv[i]));
-		}
-		begin_ops(stack_a);
-	}
-	else
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}	
-	return (0);
+        new = malloc(sizeof(t_stack_a));
+        if (!new)
+                return (NULL);
+        new->content = num;
+        new->next = NULL;
 }
