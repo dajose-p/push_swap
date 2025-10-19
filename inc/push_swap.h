@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 03:43:34 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/19 18:45:57 by danjose-         ###   ########.fr       */
+/*   Created: 2025/10/19 17:14:09 by danjose-          #+#    #+#             */
+/*   Updated: 2025/10/19 18:34:45 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int main(int argc, char **argv)
-{
-	if (argc < 2)
-		return (0);
-	if (is_num(argv) && !is_dup(argv))
-		ft_printf("OK\n");
-	else
-		ft_printf("Error\n");
-	return (0);
-}
+# include "../libft/libft.h"
+
+int	is_num(char **nums);
+int     is_dup(char **nums);
+
+#endif
