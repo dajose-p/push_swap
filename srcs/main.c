@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 03:43:34 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/19 18:45:57 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/19 20:17:16 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ int main(int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
-	if (is_num(argv) && !is_dup(argv))
+	if (is_num(argv) && !is_dup(argv) && limit_int(argv))
 		ft_printf("OK\n");
 	else
+	{
 		ft_printf("Error\n");
+		exit(1);
+	}	
 	return (0);
 }
