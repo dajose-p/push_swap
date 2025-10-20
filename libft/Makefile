@@ -18,13 +18,13 @@ OBJECTS = $(SOURCES:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar rcs $(NAME) $(OBJECTS)
+	@ar rcs $(NAME) $(OBJECTS)
 %.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -c -o $@ $<
 clean:
-	rm -rf $(OBJECTS)
+	@rm -rf $(OBJECTS)
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 re: fclean all
 
 .PHONY: bonus clean fclean re
