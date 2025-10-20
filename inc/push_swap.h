@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 17:14:09 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/19 21:20:19 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/20 20:51:10 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,9 @@ t_stack_a       *pa(int num);
 int     sta_len(t_stack_a *stack_a);
 int     stb_len(t_stack_b *stack_b);
 void    begin_ops(t_stack_a *stack_a);
+void    insert_in_a(t_stack_a **stack_a, int num);
+t_stack_a       *new_a(int num);
+t_stack_b       *new_b(int num);
+void	free_list(t_stack_a *stack_a);
 
 #endif
