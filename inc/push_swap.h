@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 17:14:09 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/22 00:44:33 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/22 00:50:16 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	free_stack(t_stack *stack);
 void    lstadd_front(t_stack **stack_dest, t_stack *stack_src);
 void    push(t_stack *stack_to, t_stack *stack_from);
 int	is_empty(t_stack *stack);
+void    print_stack(t_stack *stack, char st_name);
 
 #endif
