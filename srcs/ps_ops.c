@@ -6,22 +6,15 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:31:55 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/20 22:48:47 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/22 00:35:50 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	pa(t_stack_a *stack_a, t_stack_b *stack_b)
+void	push(t_stack *stack_a, t_stack *stack_b)
 {
-	if (is_empty_b(stack_b))
+	if (is_empty(stack_b))
 		return ;
-	lstadd_front_a(&stack_a, stack_b);
-}
-
-void	pb(t_stack_b *stack_b, t_stack_a *stack_a)
-{
-	if (is_empty_a(stack_a))
-		return ;
-	lstadd_front_b(&stack_b, stack_a);
+	lstadd_front(&stack_a, stack_b);
 }

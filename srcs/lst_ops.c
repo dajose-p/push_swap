@@ -6,19 +6,19 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:47:12 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/19 21:37:45 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/22 00:44:13 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	sta_len(t_stack_a *stack_a)
+int	st_len(t_stack *stack)
 {
 	int	i;
-	t_stack_a	*head;
+	t_stack	*head;
 
-	head = stack_a;
-	while (stack_a)
+	head = stack;
+	while (stack)
 	{
 		i++;
 		head = head->next;
@@ -26,26 +26,35 @@ int	sta_len(t_stack_a *stack_a)
 	return (i);
 }
 
-int     stb_len(t_stack_b *stack_b)
-{       
-        int     i;
-        t_stack_b       *head;
+void    lstadd_front(t_stack **stack_dest, t_stack *stack_src)
+{
+        stack_src->next = *stack_dest;
+        *stack_dest = stack_src;
+}
 
-        head = stack_b;
-        while (stack_b)
+void    insert_el(t_stack **stack, int num)
+{
+        t_stack *new;
+        new = malloc(sizeof(t_stack));
+        new->content = num;
+        new->next = *stack;
+        *stack = new;
+}
+
+void    free_stack(t_stack *stack)
+{
+        t_stack *head;
+
+        head = stack;
+        while (stack)
         {
-                i++;
-                head = head->next;
+                head = stack;
+                stack = stack->next;
+                free(head);
         }
-        return (i);
 }
 
-int	is_empty_a(t_stack_a *stack_a)
+int	is_empty(t_stack *stack)
 {
-	return (stack_a == NULL);
-}
-
-int	is_empty_b(t_stack_b *stack_b)
-{
-	return (stack_b == NULL);
+	return (stack == NULL);
 }
