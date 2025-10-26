@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 17:14:09 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/26 21:55:19 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/26 22:27:56 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ void    swap(t_stack **stack);
 void    swap_a_lot(t_stack **stack_one, t_stack **stack_two);
 void    rotate(t_stack **stack);
 void    rotate_a_lot(t_stack **stack_one, t_stack **stack_two);
+void    reverse_rotate(t_stack **stack_a);
+void    reverse_rotate_a_lot(t_stack **stack_one, t_stack **stack_two);
 
 #endif
