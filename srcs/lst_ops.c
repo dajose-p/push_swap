@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:47:12 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/22 20:24:07 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/26 20:01:05 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	st_len(t_stack *stack)
 	t_stack	*head;
 
 	head = stack;
-	while (stack)
+	while (head)
 	{
 		i++;
 		head = head->next;
