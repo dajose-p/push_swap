@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:31:55 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/26 21:48:11 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/26 21:54:56 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,10 @@ void	rotate(t_stack **stack)
 		head->next->content = temp;
 		head = head->next;
 	}
+}
+
+void	rotate_a_lot(t_stack **stack_one, t_stack **stack_two)
+{
+	rotate(stack_one);
+	rotate(stack_two);
 }
