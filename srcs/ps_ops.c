@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:31:55 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/26 21:54:56 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/28 20:24:16 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push(t_stack **stack_to, t_stack **stack_from)
 {
 	if (is_empty(*stack_from))
 		return ;
-	lstadd_front(stack_to, *stack_from);
+	lstadd_front(stack_to, stack_from);
 	del_node(stack_from);
 }
 

@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:47:12 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/26 20:01:05 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/28 20:24:47 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	st_len(t_stack *stack)
 	int	i;
 	t_stack	*head;
 
+	i = 0;
 	head = stack;
 	while (head)
 	{
@@ -26,13 +27,13 @@ int	st_len(t_stack *stack)
 	return (i);
 }
 
-void    lstadd_front(t_stack **stack_to, t_stack *stack_from)
+void    lstadd_front(t_stack **stack_to, t_stack **stack_from)
 {
 	t_stack	*new;
-	new = malloc(sizeof(new));
+	new = malloc(sizeof(t_stack));
 	if (!new)
 		return ;
-	new->content = stack_from->content;
+	new->content = (*stack_from)->content;
 	new->next = *stack_to;
 	*stack_to = new;
 }

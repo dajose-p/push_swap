@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 03:43:34 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/22 00:44:21 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/28 19:22:58 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 int main(int argc, char **argv)
 {
 	t_stack	*stack_a;
+	t_stack	*stack_b;
 	int	i;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	i = argc - 1;
 	if (argc < 2)
 		return (0);
@@ -25,8 +27,9 @@ int main(int argc, char **argv)
 	{
 		while (i >= 1)
 			insert_el(&stack_a, ft_atoi(argv[i--]));
-		begin_ops(stack_a);
+		begin_ops(&stack_a, &stack_b);
 		free_stack(stack_a);
+		free_stack(stack_b);
 	}
 	else
 	{
