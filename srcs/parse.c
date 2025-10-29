@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 03:50:22 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/19 20:12:22 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/28 21:14:43 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	is_num(char **nums)
 	while (nums[i])
 	{
 		j = 0;
-		if (nums[i][j] == '-')
+		if (nums[i][j] == '-' || nums[i][j] == '+')
 			j++;
 		while (nums[i][j])
 		{

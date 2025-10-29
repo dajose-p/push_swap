@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 17:14:09 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/28 19:31:12 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/29 01:48:33 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,17 @@ void    begin_ops(t_stack **stack, t_stack **stack_b);
 void    insert_el(t_stack **stack, int num);
 void	free_stack(t_stack *stack);
 void    lstadd_front(t_stack **stack_to, t_stack **stack_from);
-void    push(t_stack **stack_to, t_stack **stack_from);
+void    push(t_stack **stack_to, t_stack **stack_from, char letter_to);
 int	is_empty(t_stack *stack);
 void    print_stack(t_stack *stack, char st_name);
 void	del_node(t_stack **node);
-void    swap(t_stack **stack);
+void    swap(t_stack **stack, char letter_st);
 void    swap_a_lot(t_stack **stack_one, t_stack **stack_two);
-void    rotate(t_stack **stack);
+void    rotate(t_stack **stack, char letter_st);
 void    rotate_a_lot(t_stack **stack_one, t_stack **stack_two);
-void    reverse_rotate(t_stack **stack_a);
+void    reverse_rotate(t_stack **stack_a, char letter_st);
 void    reverse_rotate_a_lot(t_stack **stack_one, t_stack **stack_two);
+int     check_order(t_stack *stack);
+void    less_numbers(t_stack **stack_a, t_stack **stack_b);
 
 #endif

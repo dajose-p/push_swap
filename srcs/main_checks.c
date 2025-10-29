@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_checks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 03:43:34 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/29 00:55:28 by danjose-         ###   ########.fr       */
+/*   Created: 2025/10/28 22:25:59 by danjose-          #+#    #+#             */
+/*   Updated: 2025/10/29 01:48:57 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int main(int argc, char **argv)
+int	check_order(t_stack *stack)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int	i;
+	t_stack	*head;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	i = argc - 1;
-	if (argc < 2)
-		return (0);
-	if (is_num(argv) && !is_dup(argv) && limit_int(argv))
+	head = stack;
+	while (head->next)
 	{
-		while (i >= 1)
-			insert_el(&stack_a, ft_atoi(argv[i--]));
-		begin_ops(&stack_a, &stack_b);
-		free_stack(stack_a);
-		free_stack(stack_b);
+		if ((head->content) < (head->next->content))
+			head = head->next;
+		else
+			return (0);
 	}
-	else
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}	
-	return (0);
+	return (1);
+}
+
+void	less_numbers(t_stack **stack_a, t_stack **stack_b)
+{
+	(void)stack_b;
+
+	if (st_len(*stack_a) == 2)
+		rotate(stack_a, 'a');
 }

@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   tests.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 03:43:34 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/29 00:55:28 by danjose-         ###   ########.fr       */
+/*   Created: 2025/10/29 00:53:05 by danjose-          #+#    #+#             */
+/*   Updated: 2025/10/29 01:48:16 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int main(int argc, char **argv)
+void    begin_ops(t_stack **stack, t_stack **stack_b)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int	i;
-
-	stack_a = NULL;
-	stack_b = NULL;
-	i = argc - 1;
-	if (argc < 2)
-		return (0);
-	if (is_num(argv) && !is_dup(argv) && limit_int(argv))
-	{
-		while (i >= 1)
-			insert_el(&stack_a, ft_atoi(argv[i--]));
-		begin_ops(&stack_a, &stack_b);
-		free_stack(stack_a);
-		free_stack(stack_b);
-	}
+	(void)stack_b;
+	if (check_order(*stack))
+		ft_printf("List is already ordered\n");
 	else
 	{
-		ft_printf("Error\n");
-		exit(1);
-	}	
-	return (0);
+		if (st_len(*stack) == 2)
+			less_numbers(stack, stack_b);
+	}
 }
