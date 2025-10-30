@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 22:25:59 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/29 01:48:57 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:10:10 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,19 @@ void	less_numbers(t_stack **stack_a, t_stack **stack_b)
 	(void)stack_b;
 
 	if (st_len(*stack_a) == 2)
-		rotate(stack_a, 'a');
+		swap(stack_a, 'a');
+	else if (st_len(*stack_a) == 3)
+	{
+		while (!check_order(*stack_a))
+		{
+			if (((*stack_a)->content > (*stack_a)->next->content) && ((*stack_a)->content >
+					((*stack_a)->next->next->content)))
+				rotate(stack_a, 'a');
+			else if (((*stack_a)->content > (*stack_a)->next->content) && ((*stack_a)->content <
+                                        ((*stack_a)->next->next->content)))
+				swap(stack_a, 'a');
+			else
+				swap(stack_a, 'a');
+		}
+	}
 }
