@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 22:25:59 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/30 20:10:10 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/30 22:46:44 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,48 @@ int	check_order(t_stack *stack)
 	return (1);
 }
 
-void	less_numbers(t_stack **stack_a, t_stack **stack_b)
+void	two_numbers(t_stack **stack_a)
 {
-	(void)stack_b;
-
 	if (st_len(*stack_a) == 2)
 		swap(stack_a, 'a');
-	else if (st_len(*stack_a) == 3)
+}
+
+void	three_numbers(t_stack **stack_a)
+{
+	while (!check_order(*stack_a))
 	{
-		while (!check_order(*stack_a))
-		{
-			if (((*stack_a)->content > (*stack_a)->next->content) && ((*stack_a)->content >
-					((*stack_a)->next->next->content)))
-				rotate(stack_a, 'a');
-			else if (((*stack_a)->content > (*stack_a)->next->content) && ((*stack_a)->content <
-                                        ((*stack_a)->next->next->content)))
-				swap(stack_a, 'a');
-			else
-				swap(stack_a, 'a');
-		}
+		if (((*stack_a)->content > (*stack_a)->next->content) && ((*stack_a)->content >
+				((*stack_a)->next->next->content)))
+			rotate(stack_a, 'a');
+		else if (((*stack_a)->content > (*stack_a)->next->content) && ((*stack_a)->content <
+                                ((*stack_a)->next->next->content)))
+			swap(stack_a, 'a');
+		else
+			swap(stack_a, 'a');
+		
+	}
+}
+
+void	four_numbers(t_stack **stack_a, t_stack **stack_b)
+{
+	int	i;
+	t_stack *head;
+
+	i = 0;
+	head = *stack_a;
+	while ((min_num(*stack_a) != head->content) && head)
+	{
+		head = head->next;
+		i++;
+	}
+	while (!check_order(*stack_a))
+	{
+		if (i < 2)
+			rotate(stack_a, 'a');
+		else
+			reverse_rotate(stack_a, 'b');
+		push(stack_b, stack_a, 'b');
+		three_numbers(stack_a);
+		push(stack_a, stack_b, 'a');
 	}
 }

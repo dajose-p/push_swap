@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.c                                            :+:      :+:    :+:   */
+/*   math_ops.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 00:53:05 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/30 22:47:32 by danjose-         ###   ########.fr       */
+/*   Created: 2025/10/30 22:24:24 by danjose-          #+#    #+#             */
+/*   Updated: 2025/10/30 22:48:13 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void    begin_ops(t_stack **stack, t_stack **stack_b)
+int	min_num(t_stack *stack)
 {
-	(void)stack_b;
-	if (check_order(*stack))
-		ft_printf("List is already ordered\n");
-	else
+	t_stack *head;
+	int	min;
+
+	head = stack;
+	min = head->content;
+	while (head)
 	{
-		if (st_len(*stack) == 2)
-			two_numbers(stack);
-		else if (st_len(*stack) == 3)
-                        three_numbers(stack);
-		else if (st_len(*stack) == 4)
-                        four_numbers(stack, stack_b);
+		if (min > head->content)
+			min = head->content;
+		head = head->next;
 	}
+	return (min);
 }

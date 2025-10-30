@@ -7,7 +7,7 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS = srcs/main.c srcs/parse.c srcs/main_checks.c srcs/lst_ops.c srcs/lst_ops_2.c srcs/ps_ops.c srcs/ps_ops_2.c \
-       srcs/tests.c
+       srcs/tests.c srcs/math_ops.c
 OBJS_DIR = objs
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
