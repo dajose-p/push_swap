@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 22:25:59 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/30 22:46:44 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/31 00:49:20 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,49 @@ void	four_numbers(t_stack **stack_a, t_stack **stack_b)
 	}
 	while (!check_order(*stack_a))
 	{
-		if (i < 2)
+		if (i < 2 && i != 0)
 			rotate(stack_a, 'a');
-		else
-			reverse_rotate(stack_a, 'b');
+		else if (i > 2 && i != 0)
+			reverse_rotate(stack_a, 'a');
+		else if (i == 2)
+		{
+			reverse_rotate(stack_a, 'a');
+			reverse_rotate(stack_a, 'a');
+		}
 		push(stack_b, stack_a, 'b');
 		three_numbers(stack_a);
+		push(stack_a, stack_b, 'a');
+	}
+}
+
+void	five_numbers(t_stack **stack_a, t_stack **stack_b)
+{
+	int	i;
+	int	min;
+	t_stack *head;
+
+	i = 0;
+	min = 0;
+	head = *stack_a;
+	while (((min = min_num(*stack_a)) != head->content) && head)
+	{
+		head = head->next;
+		i++;
+	}
+	while (!check_order(*stack_a))
+	{
+		if (i <= 3 && i != 0)
+		{
+			while ((*stack_a)->content != min)
+				rotate(stack_a, 'a');
+		}
+		else if (i >= 3 && i != 0)
+		{
+			while ((*stack_a)->content != min)
+				reverse_rotate(stack_a, 'a');
+		}
+		push(stack_b, stack_a, 'b');
+		four_numbers(stack_a, stack_b);
 		push(stack_a, stack_b, 'a');
 	}
 }

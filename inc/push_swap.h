@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 17:14:09 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/30 22:31:23 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/10/31 00:45:03 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int     check_order(t_stack *stack);
 void	two_numbers(t_stack **stack_a);
 void	three_numbers(t_stack **stack_a);
 void    four_numbers(t_stack **stack_a, t_stack **stack_b);
+void	five_numbers(t_stack **stack_a, t_stack **stack_b);
 int	min_num(t_stack *stack);
 
 #endif
