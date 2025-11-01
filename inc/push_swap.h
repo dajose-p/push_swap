@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 17:14:09 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/31 00:45:03 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/11/01 23:11:51 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct	s_stack
 {
 	int	content;
+	int	index;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -40,10 +41,13 @@ void    rotate_a_lot(t_stack **stack_one, t_stack **stack_two);
 void    reverse_rotate(t_stack **stack_a, char letter_st);
 void    reverse_rotate_a_lot(t_stack **stack_one, t_stack **stack_two);
 int     check_order(t_stack *stack);
+void	small_numbers(t_stack **stack_a, t_stack **stack_b);
 void	two_numbers(t_stack **stack_a);
 void	three_numbers(t_stack **stack_a);
 void    four_numbers(t_stack **stack_a, t_stack **stack_b);
 void	five_numbers(t_stack **stack_a, t_stack **stack_b);
+void	start_ksort(t_stack **stack_a, t_stack **stack_b);
 int	min_num(t_stack *stack);
+int	max_num(t_stack *stack);
 
 #endif
