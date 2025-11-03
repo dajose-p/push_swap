@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:47:12 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/28 20:24:47 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/11/03 20:42:05 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void    lstadd_front(t_stack **stack_to, t_stack **stack_from)
 	if (!new)
 		return ;
 	new->content = (*stack_from)->content;
+	new->index = (*stack_from)->index;
 	new->next = *stack_to;
 	*stack_to = new;
 }
