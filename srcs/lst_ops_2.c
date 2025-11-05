@@ -30,7 +30,7 @@ void	del_node(t_stack **node)
 	t_stack	*temp;
 
 	if (is_empty(*node))
-		return;
+		return ;
 	temp = *node;
 	*node = (*node)->next;
 	free(temp);

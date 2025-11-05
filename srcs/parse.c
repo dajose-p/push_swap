@@ -39,7 +39,7 @@ static int	is_in_arg(char *num, char **a_nums, int pos)
 	while (a_nums[i])
 	{
 		if ((i != pos) && (ft_strncmp(num, a_nums[i], ft_strlen(num)) == 0)
-				&& ft_strlen(num) == ft_strlen(a_nums[i]))
+			&& ft_strlen(num) == ft_strlen(a_nums[i]))
 			return (1);
 		i++;
 	}
@@ -95,4 +95,4 @@ int	limit_int(char **nums)
 		i++;
 	}
 	return (1);
-}	
+}

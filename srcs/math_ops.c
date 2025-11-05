@@ -14,8 +14,8 @@
 
 int	min_num(t_stack *stack)
 {
-	t_stack *head;
-	int	min;
+	t_stack	*head;
+	int		min;
 
 	head = stack;
 	min = head->content;
@@ -30,16 +30,16 @@ int	min_num(t_stack *stack)
 
 int	max_num(t_stack *stack)
 {
-	t_stack *head;
-        int     max;
+	t_stack	*head;
+	int		max;
 
-        head = stack;
-        max = head->content;
-        while (head)
-        {
-                if (max > head->content)
-                        max = head->content;
-                head = head->next;
-        }
-        return (max);
+	head = stack;
+	max = head->content;
+	while (head)
+	{
+		if (max > head->content)
+			max = head->content;
+		head = head->next;
+	}
+	return (max);
 }

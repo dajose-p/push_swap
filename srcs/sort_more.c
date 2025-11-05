@@ -14,7 +14,7 @@
 
 int	find_max_index(t_stack *stack)
 {
-	int	max;
+	int		max;
 	t_stack	*head;
 
 	max = stack->index;
@@ -30,8 +30,8 @@ int	find_max_index(t_stack *stack)
 
 int	pos_index(t_stack *stack, int index)
 {
-	t_stack *head;
-	int	i;
+	t_stack	*head;
+	int		i;
 
 	i = 0;
 	head = stack;
@@ -65,7 +65,7 @@ void	start_ksort(t_stack **stack_a, t_stack **stack_b)
 		}
 		else
 			rotate(stack_a, 'a');
-	}	
+	}
 }
 
 void	back_to_a(t_stack **stack_a, t_stack **stack_b)

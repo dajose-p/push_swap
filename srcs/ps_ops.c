@@ -23,8 +23,8 @@ void	push(t_stack **stack_to, t_stack **stack_from, char letter_to)
 
 void	swap(t_stack **stack, char letter_st)
 {
-	int	temp;
-	int	temp_in;
+	int		temp;
+	int		temp_in;
 	t_stack	*head;
 
 	head = *stack;
@@ -50,8 +50,8 @@ void	swap_a_lot(t_stack **stack_one, t_stack **stack_two)
 
 void	rotate(t_stack **stack, char letter_st)
 {
-	int	temp;
-	int	temp_in;
+	int		temp;
+	int		temp_in;
 	t_stack	*head;
 
 	head = *stack;

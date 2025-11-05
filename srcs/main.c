@@ -12,11 +12,11 @@
 
 #include "../inc/push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int	i;
+	int		i;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -35,6 +35,6 @@ int main(int argc, char **argv)
 	{
 		ft_printf("Error\n");
 		exit(1);
-	}	
+	}
 	return (0);
 }

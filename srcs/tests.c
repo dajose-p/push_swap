@@ -14,9 +14,9 @@
 
 void	set_indexes(t_stack *stack)
 {
-	int	rank;
-	t_stack *comp;
-	t_stack *head;
+	int		rank;
+	t_stack	*comp;
+	t_stack	*head;
 
 	rank = 0;
 	head = stack;
@@ -38,16 +38,16 @@ void	set_indexes(t_stack *stack)
 void	small_numbers(t_stack **stack_a, t_stack **stack_b)
 {
 	if (st_len(*stack_a) == 2)
-                two_numbers(stack_a);
+		two_numbers(stack_a);
 	if (st_len(*stack_a) == 3)
-                three_numbers(stack_a);
+		three_numbers(stack_a);
 	if (st_len(*stack_a) == 4)
-                four_numbers(stack_a, stack_b);
+		four_numbers(stack_a, stack_b);
 	if (st_len(*stack_a) == 5)
-                five_numbers(stack_a, stack_b);
+		five_numbers(stack_a, stack_b);
 }
 
-void    begin_ops(t_stack **stack, t_stack **stack_b)
+void	begin_ops(t_stack **stack, t_stack **stack_b)
 {
 	(void)stack_b;
 	if (check_order(*stack))
@@ -57,7 +57,7 @@ void    begin_ops(t_stack **stack, t_stack **stack_b)
 		if (st_len(*stack) >= 2 && st_len(*stack) <= 5)
 			small_numbers(stack, stack_b);
 		else
-		{			
+		{
 			set_indexes(*stack);
 			start_ksort(stack, stack_b);
 			back_to_a(stack, stack_b);

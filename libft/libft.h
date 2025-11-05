@@ -13,11 +13,11 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <unistd.h>
+# include <limits.h>
 # include <stdarg.h>
 # include <stdint.h>
-# include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -75,16 +75,16 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-int		ft_printf(char const *last, ...);
-int		ft_printchar(int c);
-int		ft_printstr(char *s);
-int		ft_printnbr(int n);
-int		ft_printnbr_uns(unsigned int n);
-char	*ft_uitoa(unsigned int n);
-int		ft_printnbr_hex(long long n, int up);
-int		ft_printpointer(uintptr_t ptr);
-char    *get_next_line(int fd);
-char    *ft_strjoin_2(char *s1, char *s2);
-char    *ft_substr_2(char const *s, unsigned int start, size_t len);
+int					ft_printf(char const *last, ...);
+int					ft_printchar(int c);
+int					ft_printstr(char *s);
+int					ft_printnbr(int n);
+int					ft_printnbr_uns(unsigned int n);
+char				*ft_uitoa(unsigned int n);
+int					ft_printnbr_hex(long long n, int up);
+int					ft_printpointer(uintptr_t ptr);
+char				*get_next_line(int fd);
+char				*ft_strjoin_2(char *s1, char *s2);
+char				*ft_substr_2(char const *s, unsigned int start, size_t len);
 
 #endif
