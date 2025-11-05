@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:19:33 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/17 19:27:49 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/11/05 01:25:48 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static char	*cr_main_line(char *main_line, int fd)
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!buffer)
 		return (NULL);
+	if (!main_line)
+		main_line = ft_strdup("");
 	while (!ft_strchr(main_line, '\n') && bytes_read != 0)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
