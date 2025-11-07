@@ -105,9 +105,10 @@ make re
 ARG=$(seq 1 100 | shuf); ./push_swap $ARG | wc -l
 ```
 
-### Checker (if available)
+### Checker 
 ```bash
-./push_swap $ARG | ./checker_Mac $ARG
+make bonus
+./push_swap $ARG | ./checker $ARG
 ```
 
 ---
@@ -118,14 +119,6 @@ ARG=$(seq 1 100 | shuf); ./push_swap $ARG | wc -l
 |-------------|------------------------|----------------------------------|
 | 100 | ~650 | ≤ 700 |
 | 500 | ~4800 | ≤ 5500 |
-
----
-
-## 📹 Demo
-
-https://github.com/yourusername/push_swap/blob/main/vis.mp4
-
-*(Local demo video included in the repository as `vis.mp4`)*
 
 ---
 
