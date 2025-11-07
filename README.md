@@ -63,9 +63,7 @@ pa
 
 You can visualize how the algorithm works below 👇
 
-https://github.com/dajose-p/push_swap/vis.mp4
-
-*(If GitHub doesn’t autoplay the video, open `vis.mp4` in your repo to see the full animation.)*
+[![Watch the video](https://img.youtube.com/vi/A405iB4Du78/hqdefault.jpg)](https://youtu.be/A405iB4Du78)
 
 ---
 
