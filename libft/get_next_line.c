@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:19:33 by danjose-          #+#    #+#             */
-/*   Updated: 2025/11/07 17:33:36 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/11/07 17:37:01 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	read_and_join(int fd, char **main_line, char *buffer)
 	if (bytes_read <= 0)
 		return (bytes_read);
 	buffer[bytes_read] = '\0';
-	*main_line = ft_strjoin(*main_line, buffer);
+	*main_line = ft_strjoin_2(*main_line, buffer);
 	if (!*main_line)
 		return (-1);
 	return (bytes_read);
