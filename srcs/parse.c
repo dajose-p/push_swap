@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 03:50:22 by danjose-          #+#    #+#             */
-/*   Updated: 2025/10/28 21:14:43 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/11/06 20:51:20 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	is_in_arg(char *num, char **a_nums, int pos)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (a_nums[i])
 	{
 		if ((i != pos) && (ft_strncmp(num, a_nums[i], ft_strlen(num)) == 0)
@@ -51,7 +51,7 @@ int	is_num(char **nums)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = 0;
 	while (nums[i])
 	{
@@ -73,7 +73,7 @@ int	is_dup(char **nums)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (nums[i])
 	{
 		if (is_in_arg(nums[i], nums, i))
@@ -87,7 +87,7 @@ int	limit_int(char **nums)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (nums[i])
 	{
 		if (num_overflow(nums[i]))
