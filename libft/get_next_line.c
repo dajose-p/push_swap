@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:19:33 by danjose-          #+#    #+#             */
-/*   Updated: 2025/11/05 01:25:48 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/11/07 17:33:36 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,14 @@ char	*get_next_line(int fd)
 
 	line = NULL;
 	if (fd == -1)
+	{
+		if (main_line)
+		{
+			free(main_line);
+			main_line = NULL;
+		}
 		return (NULL);
+	}
 	main_line = cr_main_line(main_line, fd);
 	if (main_line == NULL)
 		return (NULL);

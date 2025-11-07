@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 00:53:05 by danjose-          #+#    #+#             */
-/*   Updated: 2025/11/06 20:39:10 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/11/07 17:34:07 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	begin_check(t_stack **stack_a, t_stack **stack_b)
 		free(line);
 		line = get_next_line(0);
 	}
+	get_next_line(-1);
 	if (res == 0 && check_order(*stack_a) && (*stack_b) == NULL)
 		ft_putstr_fd("OK\n", 1);
 	else if (res == 0 && !check_order(*stack_a))
