@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 00:47:34 by danjose-          #+#    #+#             */
-/*   Updated: 2025/11/05 01:40:07 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/11/06 18:59:14 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	del_node(t_stack **node)
 	t_stack	*temp;
 
 	if (is_empty(*node))
-		return;
+		return ;
 	temp = *node;
 	*node = (*node)->next;
 	free(temp);
@@ -38,14 +38,14 @@ void	del_node(t_stack **node)
 
 int	check_order(t_stack *stack)
 {
-	t_stack *head;
+	t_stack	*head;
 
 	head = stack;
 	while (head->next)
 	{
 		if (head->content > head->next->content)
-			return (1);
+			return (0);
 		head = head->next;
 	}
-	return (0);
+	return (1);
 }

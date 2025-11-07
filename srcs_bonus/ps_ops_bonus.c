@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 20:31:55 by danjose-          #+#    #+#             */
-/*   Updated: 2025/11/04 23:42:50 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/11/06 20:31:25 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	push(t_stack **stack_to, t_stack **stack_from)
 
 int	swap(t_stack **stack)
 {
-	int	temp;
-	int	temp_in;
+	int		temp;
+	int		temp_in;
 	t_stack	*head;
 
 	head = *stack;
@@ -49,10 +49,12 @@ int	swap_a_lot(t_stack **stack_one, t_stack **stack_two)
 
 int	rotate(t_stack **stack)
 {
-	int	temp;
-	int	temp_in;
+	int		temp;
+	int		temp_in;
 	t_stack	*head;
 
+	if (is_empty(*stack) || !(*stack)->next)
+		return (0);
 	head = *stack;
 	temp = head->content;
 	temp_in = head->index;
@@ -73,5 +75,5 @@ int	rotate_a_lot(t_stack **stack_one, t_stack **stack_two)
 {
 	rotate(stack_one);
 	rotate(stack_two);
-	return(0);
+	return (0);
 }

@@ -14,7 +14,7 @@
 
 int	st_len(t_stack *stack)
 {
-	int	i;
+	int		i;
 	t_stack	*head;
 
 	i = 0;
@@ -27,9 +27,10 @@ int	st_len(t_stack *stack)
 	return (i);
 }
 
-void    lstadd_front(t_stack **stack_to, t_stack **stack_from)
+void	lstadd_front(t_stack **stack_to, t_stack **stack_from)
 {
 	t_stack	*new;
+
 	new = malloc(sizeof(t_stack));
 	if (!new)
 		return ;
@@ -39,28 +40,29 @@ void    lstadd_front(t_stack **stack_to, t_stack **stack_from)
 	*stack_to = new;
 }
 
-void    insert_el(t_stack **stack, int num)
+void	insert_el(t_stack **stack, int num)
 {
-        t_stack *new;
-        new = malloc(sizeof(t_stack));
+	t_stack	*new;
+
+	new = malloc(sizeof(t_stack));
 	if (!new)
 		return ;
-        new->content = num;
-        new->next = *stack;
-        *stack = new;
+	new->content = num;
+	new->next = *stack;
+	*stack = new;
 }
 
-void    free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
-        t_stack *head;
+	t_stack	*head;
 
-        head = stack;
-        while (stack)
-        {
-                head = stack;
-                stack = stack->next;
-                free(head);
-        }
+	head = stack;
+	while (stack)
+	{
+		head = stack;
+		stack = stack->next;
+		free(head);
+	}
 }
 
 int	is_empty(t_stack *stack)
