@@ -1,4 +1,3 @@
-# ===================== CONFIGURACIÓN ===================== #
 NAME            := push_swap
 BONUS_NAME      := checker
 CC              := cc
@@ -12,27 +11,22 @@ BONUS_DIR       := srcs_bonus
 BONUS_OBJ_DIR   := objs_bonus
 INC_DIR         := inc
 
-# ===================== COLORES ===================== #
 GREEN   := \033[0;32m
 YELLOW  := \033[0;33m
 RED     := \033[0;31m
 CYAN    := \033[0;36m
 RESET   := \033[0m
 
-# ===================== ARCHIVOS FUENTE ===================== #
 PUSH_SWAP_SRCS := \
-	main.c parse.c main_checks.c lst_ops.c lst_ops_2.c \
+	main.c parse.c main_checks.c main_checks_2.c lst_ops.c lst_ops_2.c \
 	ps_ops.c ps_ops_2.c tests.c math_ops.c sort_more.c
 
 BONUS_SRCS := \
-	checker_bonus.c parse.c main_bonus.c lst_ops_bonus.c \
+	checker_bonus.c parse_bonus.c main_bonus.c lst_ops_bonus.c \
 	lst_ops_2_bonus.c ps_ops_bonus.c ps_ops_2_bonus.c
 
 PUSH_SWAP_OBJS := $(addprefix $(OBJ_DIR)/, $(PUSH_SWAP_SRCS:.c=.o))
 BONUS_OBJS     := $(addprefix $(BONUS_OBJ_DIR)/, $(BONUS_SRCS:.c=.o))
-
-# ===================== REGLAS PRINCIPALES ===================== #
-.PHONY: all bonus clean fclean re re_bonus
 
 all: $(NAME)
 
@@ -48,12 +42,10 @@ $(BONUS_NAME): $(LIBFT_A) $(BONUS_OBJS)
 	@$(CC) $(CFLAGS) $(BONUS_OBJS) $(LIBFT_A) -o $(BONUS_NAME)
 	@echo "$(GREEN)[OK]$(RESET) Ejecutable $(BONUS_NAME) creado."
 
-# ===================== LIBFT ===================== #
 $(LIBFT_A):
 	@echo "$(YELLOW)[Building libft]$(RESET)"
 	@$(MAKE) -C $(LIBFT_DIR)
 
-# ===================== COMPILACIÓN OBJETOS ===================== #
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@echo "$(CYAN)[Compiling]$(RESET) $<"
 	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
@@ -65,7 +57,6 @@ $(BONUS_OBJ_DIR)/%.o: $(BONUS_DIR)/%.c | $(BONUS_OBJ_DIR)
 $(OBJ_DIR) $(BONUS_OBJ_DIR):
 	@mkdir -p $@
 
-# ===================== LIMPIEZA ===================== #
 clean:
 	@echo "$(RED)[Cleaning objects]$(RESET)"
 	@rm -rf $(OBJ_DIR) $(BONUS_OBJ_DIR)
@@ -79,3 +70,4 @@ fclean: clean
 re: fclean all
 re_bonus: fclean bonus
 
+.PHONY: all bonus clean fclean re re_bonus
