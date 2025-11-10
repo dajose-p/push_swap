@@ -6,7 +6,7 @@
 /*   By: danjose- <danjose-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 03:50:22 by danjose-          #+#    #+#             */
-/*   Updated: 2025/11/06 20:51:20 by danjose-         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:48:22 by danjose-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 
 static int	num_overflow(char *num)
 {
-	int	res;
-	int	digit;
+	long long	res;
+	int			sign;
 
 	res = 0;
-	if (*num == '-')
+	sign = 1;
+	if (*num == '-' || *num == '+')
+	{
+		if (*num == '-')
+			sign = -1;
 		num++;
+	}
 	while (ft_isdigit(*num))
 	{
-		digit = *num - '0';
-		if (res > (INT_MAX - digit) / 10)
+		if (sign == 1 && res > (INT_MAX - (*num - '0')) / 10)
 			return (1);
-		res = res * 10 + digit;
+		if (sign == -1 && res < (INT_MIN + (*num - '0') + 1) / 10)
+			return (1);
+		res = res * 10 + (sign * (*num - '0'));
 		num++;
 	}
 	return (0);
